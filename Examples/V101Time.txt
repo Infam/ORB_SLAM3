@@ -1,0 +1,46 @@
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.5.2-dev
+---------------------------
+Tracking
+
+ORB Extraction: 9.04741$\pm$3.60911
+IMU Preintegration: 0.55112$\pm$0.11237
+Pose Prediction: 0.09012$\pm$0.26364
+LM Track: 7.82374$\pm$2.21473
+New KF decision: 0.05215$\pm$0.03138
+Total Tracking: 21.00042$\pm$12.98527
+---------------------------
+
+Local Map Tracking complexity (mean$\pm$std)
+Local KFs: 114.27654$\pm$57.97571
+Local MPs: 5842.89742$\pm$2341.33740
+
+Local Mapping
+
+KF Insertion: 15.10028$\pm$7.67107
+MP Culling: 0.08257$\pm$0.02383
+MP Creation: 60.37668$\pm$24.04396
+LBA: 139.14114$\pm$52.83189
+KF Culling: 33.91652$\pm$22.12646
+Total Local Mapping: 249.79556$\pm$100.15304
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 22581.98704$\pm$10003.08212
+LBA KF optimized: 23.94168$\pm$3.84287
+LBA KF fixed: 103.19438$\pm$68.38322
+LBA MP: 2002.78186$\pm$538.01349
+
+LBA executions: 463
+LBA aborts: 13
+---------------------------
+
+Map complexity
+KFs in map: 275
+MPs in map: 10326
+
+Place Recognition (mean$\pm$std)
+
+Database Query: 0.45258$\pm$0.22826
+SE3 estimation: 2.25481$\pm$1.69632
+Total Place Recognition: 2.68105$\pm$1.88766

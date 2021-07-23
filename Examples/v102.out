@@ -1,0 +1,175 @@
+file name: dataset-V102_monoi
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Monocular-Inertial
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+
+Camera Parameters: 
+- Camera: Pinhole
+- fx: 458.65399169921875
+- fy: 457.29598999023438
+- cx: 367.21499633789062
+- cy: 248.375
+- k1: -0.28340810537338257
+- k2: 0.073959067463874817
+- p1: 0.00019359000725671649
+- p2: 1.7618711353861727e-05
+- fps: 20
+- color order: RGB (ignored if grayscale)
+
+ORB Extractor Parameters: 
+- Number of Features: 1000
+- Scale Levels: 8
+- Scale Factor: 1.2000000476837158
+- Initial Fast Threshold: 20
+- Minimum Fast Threshold: 7
+
+Left camera to Imu Transform (Tbc): 
+[0.014865543, -0.99988091, 0.004140297, -0.021640146;
+ 0.99955726, 0.014967213, 0.02571553, -0.064676985;
+ -0.025774436, 0.0037561883, 0.99966073, 0.0098107308;
+ 0, 0, 0, 1]
+
+IMU frequency: 200 Hz
+IMU gyro noise: 0.00016999999934341758 rad/s/sqrt(Hz)
+IMU gyro walk: 1.9392999092815444e-05 rad/s^2/sqrt(Hz)
+IMU accelerometer noise: 0.0020000000949949026 m/s^2/sqrt(Hz)
+IMU accelerometer walk: 0.0030000000260770321 m/s^3/sqrt(Hz)
+First KF:0; Map init KF:0
+New Map created with 220 points
+Point distribution in KeyFrame: left-> 220 --- right-> 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+SYSTEM-> Reseting active map in monocular case
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 93
+mnInitialFrameId = 0
+7 Frames set to lost
+First KF:3; Map init KF:0
+New Map created with 96 points
+Point distribution in KeyFrame: left-> 96 --- right-> 0
+TRACK_REF_KF: Less than 15 matches!!
+Fail to track local map!
+SYSTEM-> Reseting active map in monocular case
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 101
+mnInitialFrameId = 99
+8 Frames set to lost
+First KF:5; Map init KF:3
+New Map created with 94 points
+Point distribution in KeyFrame: left-> 94 --- right-> 0
+build optimization graph
+start optimization
+end optimization
+IMU in Map 0 is initialized
+start VIBA 1
+build optimization graph
+start optimization
+end optimization
+end VIBA 1
+start VIBA 2
+build optimization graph
+start optimization
+end optimization
+end VIBA 2
+start scale ref
+end scale ref
+start scale ref
+end scale ref
+start scale ref
+end scale ref
+mpLocalMapper is not finished
+mpLoopCloser is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+mpLocalMapper is not finished
+String: 
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.5.2-dev
+---------------------------
+Tracking
+
+ORB Extraction: 13.664$\pm$7.7743
+IMU Preintegration: 0.72727$\pm$0.2779
+Pose Prediction: 0.12465$\pm$0.32894
+LM Track: 2.5079$\pm$1.0652
+New KF decision: 0.03971$\pm$0.041095
+Total Tracking: 20.149$\pm$11.991
+---------------------------
+
+Local Map Tracking complexity (mean$\pm$std)
+Local KFs: 48.49$\pm$26.663
+Local MPs: 2618.9$\pm$1074.3
+
+
+
+Local Mapping
+
+KF Insertion: 8.5322$\pm$3.7413
+MP Culling: 0.086294$\pm$0.032768
+MP Creation: 41.786$\pm$14.515
+LBA: 94.363$\pm$44.829
+KF Culling: 8.7462$\pm$8.2102
+Total Local Mapping: 152.82$\pm$69.136
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 16140$\pm$8489.8
+LBA KF optimized: 23.316$\pm$4.9481
+LBA KF fixed: 60.417$\pm$43.44
+LBA MP: 2118.6$\pm$786.11
+
+LBA executions: 187
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 179
+MPs in map: 6034
+
+
+
+Place Recognition (mean$\pm$std)
+
+Database Query: 0.43484$\pm$0.27654
+SE3 estimation: 1.7822$\pm$1.8724
+Total Place Recognition: 2.1692$\pm$2.1031
+
+Saving trajectory to f_dataset-V102_monoi.txt ...
+
+End of saving trajectory to f_dataset-V102_monoi.txt ...
+
+Saving keyframe trajectory to kf_dataset-V102_monoi.txt ...

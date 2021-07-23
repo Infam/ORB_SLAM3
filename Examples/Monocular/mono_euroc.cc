@@ -79,7 +79,7 @@ int main(int argc, char **argv)
     cout.precision(17);
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
-    ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, true);
+    ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, false);
 
     for (seq = 0; seq<num_seq; seq++)
     {
@@ -87,8 +87,11 @@ int main(int argc, char **argv)
         // Main loop
         cv::Mat im;
         int proccIm = 0;
+        //for(int ni=0; ni< 200; ni++, proccIm++)
         for(int ni=0; ni<nImages[seq]; ni++, proccIm++)
         {
+        	//cout << "ni: " << ni << endl;
+        	//cout << "seq: " << seq << endl;
 
             // Read image from file
             im = cv::imread(vstrImageFilenames[seq][ni],cv::IMREAD_UNCHANGED);

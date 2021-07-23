@@ -1974,13 +1974,19 @@ void Tracking::Track()
 #ifdef REGISTER_TIMES
         std::chrono::steady_clock::time_point time_StartLMTrack = std::chrono::steady_clock::now();
 #endif
+	static int numok;
+	static int numnok;
+	
         // If we have an initial estimation of the camera pose and matching. Track the local map.
         if(!mbOnlyTracking)
         {
             if(bOK)
             {
                 bOK = TrackLocalMap();
-
+		if(bOK)
+			numok++;
+		else
+			numnok++;
             }
             if(!bOK)
                 cout << "Fail to track local map!" << endl;
@@ -1993,6 +1999,9 @@ void Tracking::Track()
             if(bOK && !mbVO)
                 bOK = TrackLocalMap();
         }
+
+	//cout << "numok: " << numok << endl;
+	//cout << "numnok: " << numnok << endl;
 
         if(bOK)
             mState = OK;
@@ -2833,24 +2842,24 @@ bool Tracking::TrackLocalMap()
         Optimizer::PoseOptimization(&mCurrentFrame);
     else
     {
-        if(mCurrentFrame.mnId<=mnLastRelocFrameId+mnFramesToResetIMU)
-        {
-            Verbose::PrintMess("TLM: PoseOptimization ", Verbose::VERBOSITY_DEBUG);
-            Optimizer::PoseOptimization(&mCurrentFrame);
-        }
-        else
-        {
-            if(!mbMapUpdated)
-            {
-                Verbose::PrintMess("TLM: PoseInertialOptimizationLastFrame ", Verbose::VERBOSITY_DEBUG);
-                inliers = Optimizer::PoseInertialOptimizationLastFrame(&mCurrentFrame); // , !mpLastKeyFrame->GetMap()->GetIniertialBA1());
-            }
-            else
-            {
-                Verbose::PrintMess("TLM: PoseInertialOptimizationLastKeyFrame ", Verbose::VERBOSITY_DEBUG);
-                inliers = Optimizer::PoseInertialOptimizationLastKeyFrame(&mCurrentFrame); // , !mpLastKeyFrame->GetMap()->GetIniertialBA1());
-            }
-        }
+      if(mCurrentFrame.mnId<=mnLastRelocFrameId+mnFramesToResetIMU)
+      {
+      Verbose::PrintMess("TLM: PoseOptimization ", Verbose::VERBOSITY_DEBUG);
+      Optimizer::PoseOptimization(&mCurrentFrame);
+      }
+      else
+      {
+          if(!mbMapUpdated)
+          {
+              Verbose::PrintMess("TLM: PoseInertialOptimizationLastFrame ", Verbose::VERBOSITY_DEBUG);
+              inliers = Optimizer::PoseInertialOptimizationLastFrame(&mCurrentFrame); // , !mpLastKeyFrame->GetMap()->GetIniertialBA1());
+          }
+          else
+          {
+              Verbose::PrintMess("TLM: PoseInertialOptimizationLastKeyFrame ", Verbose::VERBOSITY_DEBUG);
+              inliers = Optimizer::PoseInertialOptimizationLastKeyFrame(&mCurrentFrame); // , !mpLastKeyFrame->GetMap()->GetIniertialBA1());
+          }
+      }
     }
 #ifdef REGISTER_TIMES
     std::chrono::steady_clock::time_point time_EndPoseOpt = std::chrono::steady_clock::now();
@@ -3547,7 +3556,7 @@ bool Tracking::Relocalization()
                 nCandidates--;
             }
 
-            // If a Camera Pose is computed, optimize
+            //If a Camera Pose is computed, optimize
             if(!Tcw.empty())
             {
                 Tcw.copyTo(mCurrentFrame.mTcw);

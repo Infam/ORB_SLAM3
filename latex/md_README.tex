@@ -1,0 +1,216 @@
+\hypertarget{md_README_autotoc_md10}{}\doxysubsection{V0.\+4\+: Beta version, 21 April 2021}\label{md_README_autotoc_md10}
+{\bfseries{Authors\+:}} Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, \href{http://webdiis.unizar.es/~josemari/}{\texttt{ José M. M. Montiel}}, \href{http://webdiis.unizar.es/~jdtardos/}{\texttt{ Juan D. Tardos}}.
+
+The \href{https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/Changelog.md}{\texttt{ Changelog}} describes the features of each version.
+
+ORB-\/\+SLAM3 is the first real-\/time SLAM library able to perform {\bfseries{Visual, Visual-\/\+Inertial and Multi-\/\+Map SLAM}} with {\bfseries{monocular, stereo and RGB-\/D}} cameras, using {\bfseries{pin-\/hole and fisheye}} lens models. In all sensor configurations, ORB-\/\+SLAM3 is as robust as the best systems available in the literature, and significantly more accurate.
+
+We provide examples to run ORB-\/\+SLAM3 in the \href{http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets}{\texttt{ Eu\+RoC dataset}} using stereo or monocular, with or without IMU, and in the \href{https://vision.in.tum.de/data/datasets/visual-inertial-dataset}{\texttt{ TUM-\/\+VI dataset}} using fisheye stereo or monocular, with or without IMU. Videos of some example executions can be found at \href{https://www.youtube.com/channel/UCXVt-kXG6T95Z4tVaYlU80Q}{\texttt{ ORB-\/\+SLAM3 channel}}.
+
+This software is based on \href{https://github.com/raulmur/ORB_SLAM2}{\texttt{ ORB-\/\+SLAM2}} developed by \href{http://webdiis.unizar.es/~raulmur/}{\texttt{ Raul Mur-\/\+Artal}}, \href{http://webdiis.unizar.es/~jdtardos/}{\texttt{ Juan D. Tardos}}, \href{http://webdiis.unizar.es/~josemari/}{\texttt{ J. M. M. Montiel}} and \href{http://doriangalvez.com/}{\texttt{ Dorian Galvez-\/\+Lopez}} (\href{https://github.com/dorian3d/DBoW2}{\texttt{ DBo\+W2}}).
+
+\href{https://youtu.be/HyLNq-98LRo}{\texttt{ }}\hypertarget{md_README_autotoc_md11}{}\doxysubsection{Related Publications\+:}\label{md_README_autotoc_md11}
+\mbox{[}ORB-\/\+SLAM3\mbox{]} Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, José M. M. Montiel and Juan D. Tardós, {\bfseries{ORB-\/\+SLAM3\+: An Accurate Open-\/\+Source Library for Visual, Visual-\/\+Inertial and Multi-\/\+Map SLAM}}, {\itshape IEEE Transactions on Robotics, 2021} {\bfseries{\href{https://arxiv.org/abs/2007.11898}{\texttt{ PDF}}}}.
+
+\mbox{[}IMU-\/\+Initialization\mbox{]} Carlos Campos, J. M. M. Montiel and Juan D. Tardós, {\bfseries{Inertial-\/\+Only Optimization for Visual-\/\+Inertial Initialization}}, {\itshape ICRA 2020}. {\bfseries{\href{https://arxiv.org/pdf/2003.05766.pdf}{\texttt{ PDF}}}}
+
+\mbox{[}ORBSLAM-\/\+Atlas\mbox{]} Richard Elvira, J. M. M. Montiel and Juan D. Tardós, {\bfseries{ORBSLAM-\/\+Atlas\+: a robust and accurate multi-\/map system}}, {\itshape IROS 2019}. {\bfseries{\href{https://arxiv.org/pdf/1908.11585.pdf}{\texttt{ PDF}}}}.
+
+\mbox{[}ORBSLAM-\/\+VI\mbox{]} Raúl Mur-\/\+Artal, and Juan D. Tardós, {\bfseries{Visual-\/inertial monocular SLAM with map reuse}}, IEEE Robotics and Automation Letters, vol. 2 no. 2, pp. 796-\/803, 2017. {\bfseries{\href{https://arxiv.org/pdf/1610.05949.pdf}{\texttt{ PDF}}}}.
+
+\mbox{[}Stereo and RGB-\/D\mbox{]} Raúl Mur-\/\+Artal and Juan D. Tardós. {\bfseries{ORB-\/\+SLAM2\+: an Open-\/\+Source SLAM System for Monocular, Stereo and RGB-\/D Cameras}}. {\itshape IEEE Transactions on Robotics,} vol. 33, no. 5, pp. 1255-\/1262, 2017. {\bfseries{\href{https://arxiv.org/pdf/1610.06475.pdf}{\texttt{ PDF}}}}.
+
+\mbox{[}Monocular\mbox{]} Raúl Mur-\/\+Artal, José M. M. Montiel and Juan D. Tardós. {\bfseries{ORB-\/\+SLAM\+: A Versatile and Accurate Monocular SLAM System}}. {\itshape IEEE Transactions on Robotics,} vol. 31, no. 5, pp. 1147-\/1163, 2015. ({\bfseries{2015 IEEE Transactions on Robotics Best Paper Award}}). {\bfseries{\href{https://arxiv.org/pdf/1502.00956.pdf}{\texttt{ PDF}}}}.
+
+\mbox{[}DBo\+W2 Place Recognition\mbox{]} Dorian Gálvez-\/\+López and Juan D. Tardós. {\bfseries{Bags of Binary Words for Fast Place Recognition in Image Sequences}}. {\itshape IEEE Transactions on Robotics,} vol. 28, no. 5, pp. 1188-\/1197, 2012. {\bfseries{\href{http://doriangalvez.com/php/dl.php?dlp=GalvezTRO12.pdf}{\texttt{ PDF}}}}\hypertarget{md_README_autotoc_md12}{}\doxysection{1. License}\label{md_README_autotoc_md12}
+ORB-\/\+SLAM3 is released under \href{https://github.com/UZ-SLAMLab/ORB_SLAM3/LICENSE}{\texttt{ GPLv3 license}}. For a list of all code/library dependencies (and associated licenses), please see \href{https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/Dependencies.md}{\texttt{ Dependencies.\+md}}.
+
+For a closed-\/source version of ORB-\/\+SLAM3 for commercial purposes, please contact the authors\+: orbslam (at) unizar (dot) es.
+
+If you use ORB-\/\+SLAM3 in an academic work, please cite\+: \begin{DoxyVerb}@article{ORBSLAM3_2020,
+  title={{ORB-SLAM3}: An Accurate Open-Source Library for Visual, Visual-Inertial 
+           and Multi-Map {SLAM}},
+  author={Campos, Carlos AND Elvira, Richard AND G\´omez, Juan J. AND Montiel, 
+          Jos\'e M. M. AND Tard\'os, Juan D.},
+  journal={arXiv preprint arXiv:2007.11898},
+  year={2020}
+ }
+\end{DoxyVerb}
+ \hypertarget{md_README_autotoc_md13}{}\doxysection{2. Prerequisites}\label{md_README_autotoc_md13}
+We have tested the library in {\bfseries{Ubuntu 16.\+04}} and {\bfseries{18.\+04}}, but it should be easy to compile in other platforms. A powerful computer (e.\+g. i7) will ensure real-\/time performance and provide more stable and accurate results.\hypertarget{md_README_autotoc_md14}{}\doxysubsection{C++11 or C++0x Compiler}\label{md_README_autotoc_md14}
+We use the new thread and chrono functionalities of C++11.\hypertarget{md_README_autotoc_md15}{}\doxysubsection{Pangolin}\label{md_README_autotoc_md15}
+We use \href{https://github.com/stevenlovegrove/Pangolin}{\texttt{ Pangolin}} for visualization and user interface. Dowload and install instructions can be found at\+: \href{https://github.com/stevenlovegrove/Pangolin}{\texttt{ https\+://github.\+com/stevenlovegrove/\+Pangolin}}.\hypertarget{md_README_autotoc_md16}{}\doxysubsection{Open\+CV}\label{md_README_autotoc_md16}
+We use \href{http://opencv.org}{\texttt{ Open\+CV}} to manipulate images and features. Dowload and install instructions can be found at\+: \href{http://opencv.org}{\texttt{ http\+://opencv.\+org}}. {\bfseries{Required at leat 3.\+0. Tested with Open\+CV 3.\+2.\+0}}.\hypertarget{md_README_autotoc_md17}{}\doxysubsection{Eigen3}\label{md_README_autotoc_md17}
+Required by g2o (see below). Download and install instructions can be found at\+: \href{http://eigen.tuxfamily.org}{\texttt{ http\+://eigen.\+tuxfamily.\+org}}. {\bfseries{Required at least 3.\+1.\+0}}.\hypertarget{md_README_autotoc_md18}{}\doxysubsection{DBo\+W2 and g2o (\+Included in Thirdparty folder)}\label{md_README_autotoc_md18}
+We use modified versions of the \href{https://github.com/dorian3d/DBoW2}{\texttt{ DBo\+W2}} library to perform place recognition and \href{https://github.com/RainerKuemmerle/g2o}{\texttt{ g2o}} library to perform non-\/linear optimizations. Both modified libraries (which are BSD) are included in the {\itshape Thirdparty} folder.\hypertarget{md_README_autotoc_md19}{}\doxysubsection{Python}\label{md_README_autotoc_md19}
+Required to calculate the alignment of the trajectory with the ground truth. {\bfseries{Required Numpy module}}.
+
+
+\begin{DoxyItemize}
+\item (win) \href{http://www.python.org/downloads/windows}{\texttt{ http\+://www.\+python.\+org/downloads/windows}}
+\item (deb) {\ttfamily sudo apt install libpython2.\+7-\/dev}
+\item (mac) preinstalled with osx
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysubsection{ROS (optional)}\label{md_README_autotoc_md20}
+We provide some examples to process input of a monocular, monocular-\/inertial, stereo, stereo-\/inertial or RGB-\/D camera using ROS. Building these examples is optional. These have been tested with ROS Melodic under Ubuntu 18.\+04.\hypertarget{md_README_autotoc_md21}{}\doxysection{3. Building ORB-\/\+SLAM3 library and examples}\label{md_README_autotoc_md21}
+Clone the repository\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/UZ-\/SLAMLab/ORB\_SLAM3.git ORB\_SLAM3}
+
+\end{DoxyCode}
+
+
+We provide a script {\ttfamily build.\+sh} to build the {\itshape Thirdparty} libraries and {\itshape ORB-\/\+SLAM3}. Please make sure you have installed all required dependencies (see section 2). Execute\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd ORB\_SLAM3}
+\DoxyCodeLine{chmod +x build.sh}
+\DoxyCodeLine{./build.sh}
+
+\end{DoxyCode}
+
+
+This will create {\bfseries{lib\+ORB\+\_\+\+SLAM3.\+so}} at {\itshape lib} folder and the executables in {\itshape Examples} folder.\hypertarget{md_README_autotoc_md22}{}\doxysection{4. Eu\+Ro\+C Examples}\label{md_README_autotoc_md22}
+\href{http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets}{\texttt{ Eu\+RoC dataset}} was recorded with two pinhole cameras and an inertial sensor. We provide an example script to launch Eu\+RoC sequences in all the sensor configurations.
+
+
+\begin{DoxyEnumerate}
+\item Download a sequence (ASL format) from \href{http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets}{\texttt{ http\+://projects.\+asl.\+ethz.\+ch/datasets/doku.\+php?id=kmavvisualinertialdatasets}}
+\item Open the script \char`\"{}euroc\+\_\+examples.\+sh\char`\"{} in the root of the project. Change {\bfseries{path\+Dataset\+Euroc}} variable to point to the directory where the dataset has been uncompressed.
+\item Execute the following script to process all the sequences with all sensor configurations\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./euroc\_examples}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md23}{}\doxysubsection{Evaluation}\label{md_README_autotoc_md23}
+Eu\+RoC provides ground truth for each sequence in the IMU body reference. As pure visual executions report trajectories centered in the left camera, we provide in the \char`\"{}evaluation\char`\"{} folder the transformation of the ground truth to the left camera reference. Visual-\/inertial trajectories use the ground truth from the dataset.
+
+Execute the following script to process sequences and compute the RMS ATE\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./euroc\_eval\_examples}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md24}{}\doxysection{5. TUM-\/\+VI Examples}\label{md_README_autotoc_md24}
+\href{https://vision.in.tum.de/data/datasets/visual-inertial-dataset}{\texttt{ TUM-\/\+VI dataset}} was recorded with two fisheye cameras and an inertial sensor.
+
+
+\begin{DoxyEnumerate}
+\item Download a sequence from \href{https://vision.in.tum.de/data/datasets/visual-inertial-dataset}{\texttt{ https\+://vision.\+in.\+tum.\+de/data/datasets/visual-\/inertial-\/dataset}} and uncompress it.
+\item Open the script \char`\"{}tum\+\_\+vi\+\_\+examples.\+sh\char`\"{} in the root of the project. Change {\bfseries{path\+Dataset\+TUM\+\_\+\+VI}} variable to point to the directory where the dataset has been uncompressed.
+\item Execute the following script to process all the sequences with all sensor configurations\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./tum\_vi\_examples}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md25}{}\doxysubsection{Evaluation}\label{md_README_autotoc_md25}
+In TUM-\/\+VI ground truth is only available in the room where all sequences start and end. As a result the error measures the drift at the end of the sequence.
+
+Execute the following script to process sequences and compute the RMS ATE\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./tum\_vi\_eval\_examples}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md26}{}\doxysection{6. ROS Examples}\label{md_README_autotoc_md26}
+\hypertarget{md_README_autotoc_md27}{}\doxysubsubsection{Building the nodes for mono, mono-\/inertial, stereo, stereo-\/inertial and RGB-\/D}\label{md_README_autotoc_md27}
+Tested with ROS Melodic and ubuntu 18.\+04.
+
+
+\begin{DoxyEnumerate}
+\item Add the path including {\itshape Examples/\+ROS/\+ORB\+\_\+\+SLAM3} to the ROS\+\_\+\+PACKAGE\+\_\+\+PATH environment variable. Open .bashrc file\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gedit \string~/.bashrc}
+
+\end{DoxyCode}
+ and add at the end the following line. Replace PATH by the folder where you cloned ORB\+\_\+\+SLAM3\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export ROS\_PACKAGE\_PATH=\$\{ROS\_PACKAGE\_PATH\}:PATH/ORB\_SLAM3/Examples/ROS}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Execute {\ttfamily build\+\_\+ros.\+sh} script\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{chmod +x build\_ros.sh}
+\DoxyCodeLine{./build\_ros.sh}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md28}{}\doxysubsubsection{Running Monocular Node}\label{md_README_autotoc_md28}
+For a monocular input from topic {\ttfamily /camera/image\+\_\+raw} run node ORB\+\_\+\+SLAM3/\+Mono. You will need to provide the vocabulary file and a settings file. See the monocular examples above.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun ORB\_SLAM3 Mono PATH\_TO\_VOCABULARY PATH\_TO\_SETTINGS\_FILE}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md29}{}\doxysubsubsection{Running Monocular-\/\+Inertial Node}\label{md_README_autotoc_md29}
+For a monocular input from topic {\ttfamily /camera/image\+\_\+raw} and an inertial input from topic {\ttfamily /imu}, run node ORB\+\_\+\+SLAM3/\+Mono\+\_\+\+Inertial. Setting the optional third argument to true will apply CLAHE equalization to images (Mainly for TUM-\/\+VI dataset).
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun ORB\_SLAM3 Mono PATH\_TO\_VOCABULARY PATH\_TO\_SETTINGS\_FILE [EQUALIZATION] }
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md30}{}\doxysubsubsection{Running Stereo Node}\label{md_README_autotoc_md30}
+For a stereo input from topic {\ttfamily /camera/left/image\+\_\+raw} and {\ttfamily /camera/right/image\+\_\+raw} run node ORB\+\_\+\+SLAM3/\+Stereo. You will need to provide the vocabulary file and a settings file. For Pinhole camera model, if you {\bfseries{provide rectification matrices}} (see Examples/\+Stereo/\+Eu\+Ro\+C.\+yaml example), the node will recitify the images online, {\bfseries{otherwise images must be pre-\/rectified}}. For Fish\+Eye camera model, rectification is not required since system works with original images\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun ORB\_SLAM3 Stereo PATH\_TO\_VOCABULARY PATH\_TO\_SETTINGS\_FILE ONLINE\_RECTIFICATION}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md31}{}\doxysubsubsection{Running Stereo-\/\+Inertial Node}\label{md_README_autotoc_md31}
+For a stereo input from topics {\ttfamily /camera/left/image\+\_\+raw} and {\ttfamily /camera/right/image\+\_\+raw}, and an inertial input from topic {\ttfamily /imu}, run node ORB\+\_\+\+SLAM3/\+Stereo\+\_\+\+Inertial. You will need to provide the vocabulary file and a settings file, including rectification matrices if required in a similar way to Stereo case\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun ORB\_SLAM3 Stereo\_Inertial PATH\_TO\_VOCABULARY PATH\_TO\_SETTINGS\_FILE ONLINE\_RECTIFICATION [EQUALIZATION] }
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md32}{}\doxysubsubsection{Running RGB\+\_\+\+D Node}\label{md_README_autotoc_md32}
+For an RGB-\/D input from topics {\ttfamily /camera/rgb/image\+\_\+raw} and {\ttfamily /camera/depth\+\_\+registered/image\+\_\+raw}, run node ORB\+\_\+\+SLAM3/\+RGBD. You will need to provide the vocabulary file and a settings file. See the RGB-\/D example above.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun ORB\_SLAM3 RGBD PATH\_TO\_VOCABULARY PATH\_TO\_SETTINGS\_FILE}
+
+\end{DoxyCode}
+
+
+{\bfseries{Running ROS example\+:}} Download a rosbag (e.\+g. V1\+\_\+02\+\_\+medium.\+bag) from the Eu\+RoC dataset (\href{http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets}{\texttt{ http\+://projects.\+asl.\+ethz.\+ch/datasets/doku.\+php?id=kmavvisualinertialdatasets}}). Open 3 tabs on the terminal and run the following command at each tab for a Stereo-\/\+Inertial configuration\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roscore}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun ORB\_SLAM3 Stereo\_Inertial Vocabulary/ORBvoc.txt Examples/Stereo-\/Inertial/EuRoC.yaml true}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosbag play -\/-\/pause V1\_02\_medium.bag /cam0/image\_raw:=/camera/left/image\_raw /cam1/image\_raw:=/camera/right/image\_raw /imu0:=/imu}
+
+\end{DoxyCode}
+
+
+Once ORB-\/\+SLAM3 has loaded the vocabulary, press space in the rosbag tab.
+
+{\bfseries{Remark\+:}} For rosbags from TUM-\/\+VI dataset, some play issue may appear due to chunk size. One possible solution is to rebag them with the default chunk size, for example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun rosbag fastrebag.py dataset-\/room1\_512\_16.bag dataset-\/room1\_512\_16\_small\_chunks.bag}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md33}{}\doxysection{7. Time analysis}\label{md_README_autotoc_md33}
+A flag in {\ttfamily include\textbackslash{}Config.\+h} activates time measurements. It is necessary to uncomment the line {\ttfamily \#define REGISTER\+\_\+\+TIMES} to obtain the time stats of one execution which is shown at the terminal and stored in a text file({\ttfamily Exec\+Time\+Mean.\+txt}). 

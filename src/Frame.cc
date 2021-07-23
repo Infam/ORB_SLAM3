@@ -299,16 +299,26 @@ Frame::Frame(const cv::Mat &imGray, const double &timeStamp, ORBextractor* extra
     mvLevelSigma2 = mpORBextractorLeft->GetScaleSigmaSquares();
     mvInvLevelSigma2 = mpORBextractorLeft->GetInverseScaleSigmaSquares();
 
-    // ORB extraction
-#ifdef REGISTER_TIMES
-    std::chrono::steady_clock::time_point time_StartExtORB = std::chrono::steady_clock::now();
-#endif
-    ExtractORB(0,imGray,0,1000);
-#ifdef REGISTER_TIMES
-    std::chrono::steady_clock::time_point time_EndExtORB = std::chrono::steady_clock::now();
 
-    mTimeORB_Ext = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndExtORB - time_StartExtORB).count();
-#endif
+    //cout << " FRAME ID: " << mnId <<endl;
+    //cout << " mnScaleLevels     " << mnScaleLevels     <<endl;
+    //cout << " mfScaleFactor     " << mfScaleFactor     <<endl;
+    //cout << " mfLogScaleFactor  " << mfLogScaleFactor  <<endl;
+    //cout << " mvScaleFactors    " << mvScaleFactors    <<endl;
+    //cout << " mvInvScaleFactors " << mvInvScaleFactors <<endl;
+    //cout << " mvLevelSigma2     " << mvLevelSigma2     <<endl;
+    //cout << " mvInvLevelSigma2  " << mvInvLevelSigma2  <<endl;
+    // ORB extraction
+//#ifdef REGISTER_TIMES
+//    std::chrono::steady_clock::time_point time_StartExtORB = std::chrono::steady_clock::now();
+//#endif
+    ExtractORB(0,imGray,0,1000);
+//#ifdef REGISTER_TIMES
+//    std::chrono::steady_clock::time_point time_EndExtORB = std::chrono::steady_clock::now();
+//
+//    mTimeORB_Ext = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndExtORB - time_StartExtORB).count();
+//#endif
+//    cout << "EXTRACT: " << mTimeORB_Ext << endl;
 
 
     N = mvKeys.size();
@@ -410,6 +420,7 @@ void Frame::AssignFeaturesToGrid()
     }
 }
 
+//     ExtractORB(0,imGray,0,1000);
 void Frame::ExtractORB(int flag, const cv::Mat &im, const int x0, const int x1)
 {
     vector<int> vLapping = {x0,x1};

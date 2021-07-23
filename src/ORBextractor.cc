@@ -766,6 +766,7 @@ namespace ORB_SLAM3
 
         const float W = 35;
 
+
         for (int level = 0; level < nlevels; ++level)
         {
             const int minBorderX = EDGE_THRESHOLD-3;
@@ -783,7 +784,13 @@ namespace ORB_SLAM3
             const int nRows = height/W;
             const int wCell = ceil(width/nCols);
             const int hCell = ceil(height/nRows);
+#ifdef REGISTER_TIMES
+    std::chrono::steady_clock::time_point time_StartExtORB = std::chrono::steady_clock::now();
+    	double loop;
+#endif
 
+    		//cout << "nRows: " << nRows << endl;
+    		//cout << "nCols: " << nCols << endl;
             for(int i=0; i<nRows; i++)
             {
                 const float iniY =minBorderY+i*hCell;
@@ -793,6 +800,9 @@ namespace ORB_SLAM3
                     continue;
                 if(maxY>maxBorderY)
                     maxY = maxBorderY;
+#ifdef REGISTER_TIMES
+    std::chrono::steady_clock::time_point time_StartExtORB = std::chrono::steady_clock::now();
+#endif
 
                 for(int j=0; j<nCols; j++)
                 {
@@ -805,6 +815,7 @@ namespace ORB_SLAM3
 
                     vector<cv::KeyPoint> vKeysCell;
 
+		    //cout << "FAST" << endl;
                     FAST(mvImagePyramid[level].rowRange(iniY,maxY).colRange(iniX,maxX),
                          vKeysCell,iniThFAST,true);
 
@@ -824,6 +835,7 @@ namespace ORB_SLAM3
 
                     if(vKeysCell.empty())
                     {
+		    //cout << "FAST" << endl;
                         FAST(mvImagePyramid[level].rowRange(iniY,maxY).colRange(iniX,maxX),
                              vKeysCell,minThFAST,true);
                         /*if(bRight && j <= 13){
@@ -849,9 +861,35 @@ namespace ORB_SLAM3
                             vToDistributeKeys.push_back(*vit);
                         }
                     }
-
                 }
+#ifdef REGISTER_TIMES
+    std::chrono::steady_clock::time_point time_EndExtORB = std::chrono::steady_clock::now();
+
+    loop = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndExtORB - time_StartExtORB).count();
+#endif
+    		//cout << "Time: " << mTimeORB_Ext << endl;
+
             }
+#ifdef REGISTER_TIMES
+    std::chrono::steady_clock::time_point time_EndExtORB = std::chrono::steady_clock::now();
+
+    double mTimeORB_Ext = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndExtORB - time_StartExtORB).count();
+#endif
+    	
+    		//if(mTimeORB_Ext > 4.0){
+    		//	cout << "Pyramid: " << mTimeORB_Ext << endl;
+    		//	cout << "Loop: " << loop << endl;
+            	//	cout <<"Level "<< level<< endl; 
+            	//	cout <<"Row "<< nRows << endl; 
+            	//	cout <<"Col "<< nCols << endl; 
+		//}
+
+            //cout <<"minBorderX"<< minBorderX << endl; 
+            //cout <<"minBorderY"<< minBorderY << endl; 
+            //cout <<"maxBorderX"<< maxBorderX << endl; 
+            //cout <<"maxBorderY"<< maxBorderY << endl; 
+            //cout <<"wCell     "<< wCell      << endl; 
+            //cout <<"hCell     "<< hCell      << endl; 
 
             vector<KeyPoint> & keypoints = allKeypoints[level];
             keypoints.reserve(nfeatures);
@@ -1074,9 +1112,10 @@ namespace ORB_SLAM3
 
         Mat image = _image.getMat();
         assert(image.type() == CV_8UC1 );
-
+	
         // Pre-compute the scale pyramid
         ComputePyramid(image);
+
 
         vector < vector<KeyPoint> > allKeypoints;
         ComputeKeyPointsOctTree(allKeypoints);

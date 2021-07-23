@@ -77,16 +77,29 @@ System::System(const string &strVocFile, const string &strSettingsFile, const eS
     //----
     //Load ORB Vocabulary
     cout << endl << "Loading ORB Vocabulary. This could take a while..." << endl;
+#ifdef REGISTER_TIMES
+    std::chrono::steady_clock::time_point time_StartPoseOpt = std::chrono::steady_clock::now();
+
+#endif
+
 
     mpVocabulary = new ORBVocabulary();
-    bool bVocLoad = mpVocabulary->loadFromTextFile(strVocFile);
+    //bool bVocLoad = mpVocabulary->loadFromTextFile(strVocFile);
+    bool bVocLoad = mpVocabulary->loadFromBinaryFile(strVocFile);
+
+#ifdef REGISTER_TIMES
+    std::chrono::steady_clock::time_point time_EndPoseOpt = std::chrono::steady_clock::now();
+
+    double timePoseOpt_ms = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndPoseOpt - time_StartPoseOpt).count();
+#endif
+
     if(!bVocLoad)
     {
         cerr << "Wrong path to vocabulary. " << endl;
         cerr << "Falied to open at: " << strVocFile << endl;
         exit(-1);
     }
-    cout << "Vocabulary loaded!" << endl << endl;
+    cout << "Vocabulary loaded! Time Taken: " << timePoseOpt_ms << endl << endl;
 
     //Create KeyFrame Database
     mpKeyFrameDatabase = new KeyFrameDatabase(*mpVocabulary);

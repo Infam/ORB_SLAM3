@@ -322,6 +322,7 @@ bool LoopClosing::NewDetectCommonRegions()
 
     if(mnLoopNumCoincidences > 0)
     {
+	    cout << mnLoopNumCoincidences << endl;
         bCheckSpatial = true;
         // Find from the last KF candidates
         cv::Mat mTcl = mpCurrentKF->GetPose() * mpLoopLastCurrentKF->GetPoseInverse();
@@ -453,6 +454,10 @@ bool LoopClosing::NewDetectCommonRegions()
 
     if(mbMergeDetected || mbLoopDetected)
     {
+	    if(mbMergeDetected)
+		    cout << "MERGE DETECTED" << endl;
+	    if(mbLoopDetected)
+		    cout << "LOOP DETECTED" << endl;
         return true;
     }
 

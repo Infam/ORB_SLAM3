@@ -1,0 +1,24 @@
+Details of changes between the different versions.\hypertarget{md_Changelog_autotoc_md1}{}\doxysubsection{V0.\+4\+: Beta version, 21 April 2021}\label{md_Changelog_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Changed Open\+CV dynamic matrices to static matrices to speed up the code.
+\item Capability to measure running time of the system threads.
+\item Compatibility with Open\+CV 4.\+0 (Requires at least Open\+CV 3.\+0)
+\item Fixed minor bugs.
+\end{DoxyItemize}\hypertarget{md_Changelog_autotoc_md2}{}\doxysubsection{V0.\+3\+: Beta version, 4 Sep 2020}\label{md_Changelog_autotoc_md2}
+
+\begin{DoxyItemize}
+\item RGB-\/D compatibility, the RGB-\/D examples have been adapted to the new version.
+\item Kitti and TUM dataset compatibility, these examples have been adapted to the new version.
+\item ROS compatibility, updated the old references in the code to work with this version.
+\item Config file parser, the YAML file contains the session configuration, a wrong parametrization may break the execution without any information to solve it. This version parses the file to read all the fields and give a proper answer if one of the fields have been wrongly deffined or does not exist.
+\item Fixed minor bugs.
+\end{DoxyItemize}\hypertarget{md_Changelog_autotoc_md3}{}\doxysubsection{V0.\+2\+: Beta version, 7 Aug 2020}\label{md_Changelog_autotoc_md3}
+Initial release. It has these capabilities\+:
+
+
+\begin{DoxyItemize}
+\item Multiple-\/\+Maps capabilities, it is able to handle multiple maps in the same session and merge them when a common area is detected with a seamless fussion.
+\item Inertial sensor, the IMU initialization takes 2 seconds to achieve a scale error less than 5\% and it is reffined in the next 10 seconds until it is around 1\%. Inertial measures are integrated at frame rate to estimate the scale, gravity and velocity in order to improve the visual features detection and make the system robust to temporal occlusions.
+\item Fisheye sensor, the fisheye sensors are now fully supported in monocular and stereo. 
+\end{DoxyItemize}

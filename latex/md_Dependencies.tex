@@ -1,0 +1,21 @@
+\hypertarget{md_Dependencies_autotoc_md5}{}\doxysubsection{ORB-\/\+SLAM3 version 0.\+3}\label{md_Dependencies_autotoc_md5}
+In this document we list all the pieces of code included by ORB-\/\+SLAM3 and linked libraries which are not property of the authors of ORB-\/\+SLAM3.\hypertarget{md_Dependencies_autotoc_md6}{}\doxyparagraph{Code in $<$strong$>$src$<$/strong$>$ and $<$strong$>$include$<$/strong$>$ folders}\label{md_Dependencies_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\itshape ORBextractor.\+cc}. This is a modified version of orb.\+cpp of Open\+CV library. The original code is BSD licensed.
+\item {\itshape Pn\+Psolver.\+h, Pn\+Psolver.\+cc}. This is a modified version of the epnp.\+h and epnp.\+cc of Vincent Lepetit. This code can be found in popular BSD licensed computer vision libraries as \href{https://github.com/Itseez/opencv/blob/master/modules/calib3d/src/epnp.cpp}{\texttt{ Open\+CV}} and \href{https://github.com/laurentkneip/opengv/blob/master/src/absolute_pose/modules/Epnp.cpp}{\texttt{ Open\+GV}}. The original code is Free\+BSD.
+\item {\itshape MLPn\+Psolver.\+h, MLPn\+Psolver.\+cc}. This is a modified version of the MLPnP of Steffen Urban from \href{https://github.com/urbste/opengv}{\texttt{ here}}. The original code is BSD licensed.
+\item Function {\itshape ORBmatcher\+::\+Descriptor\+Distance} in {\itshape ORBmatcher.\+cc}. The code is from\+: \href{http://graphics.stanford.edu/~seander/bithacks.html\#CountBitsSetParallel}{\texttt{ http\+://graphics.\+stanford.\+edu/$\sim$seander/bithacks.\+html\#\+Count\+Bits\+Set\+Parallel}}. The code is in the public domain.
+\end{DoxyItemize}\hypertarget{md_Dependencies_autotoc_md7}{}\doxyparagraph{Code in Thirdparty folder}\label{md_Dependencies_autotoc_md7}
+
+\begin{DoxyItemize}
+\item All code in {\bfseries{DBo\+W2}} folder. This is a modified version of \href{https://github.com/dorian3d/DBoW2}{\texttt{ DBo\+W2}} and \href{https://github.com/dorian3d/DLib}{\texttt{ DLib}} library. All files included are BSD licensed.
+\item All code in {\bfseries{g2o}} folder. This is a modified version of \href{https://github.com/RainerKuemmerle/g2o}{\texttt{ g2o}}. All files included are BSD licensed.
+\end{DoxyItemize}\hypertarget{md_Dependencies_autotoc_md8}{}\doxyparagraph{Library dependencies}\label{md_Dependencies_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{Pangolin (visualization and user interface)}}. \href{https://en.wikipedia.org/wiki/MIT_License}{\texttt{ MIT license}}.
+\item {\bfseries{Open\+CV}}. BSD license.
+\item {\bfseries{Eigen3}}. For versions greater than 3.\+1.\+1 is MPL2, earlier versions are LGPLv3.
+\item {\bfseries{ROS (Optional, only if you build Examples/\+ROS)}}. BSD license. In the manifest.\+xml the only declared package dependencies are roscpp, tf, sensor\+\_\+msgs, image\+\_\+transport, cv\+\_\+bridge, which are all BSD licensed. 
+\end{DoxyItemize}
